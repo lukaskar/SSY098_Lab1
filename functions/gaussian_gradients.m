@@ -1,5 +1,5 @@
 function [grad_x, grad_y] = gaussian_gradients(img, std)
-filtered_img = gaussian_filter(img,std);
+filtered_img = gaussian_filter(img, std);
 derivative_x = [-0.5, 0, 0.5];
 derivative_y = [-0.5, 0, 0.5]';
 

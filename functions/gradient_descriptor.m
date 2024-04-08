@@ -2,8 +2,8 @@ function desc = gradient_descriptor(image, position, radius)
 patch = get_patch(image, position(1), position(2), radius);
 
 % Compute gaussian gradients. Let the standard deviation be proportional to radius.
-proportional_std = 0.1;  % can be changed!
-[grad_x, grad_y] = gaussian_gradients(patch, floor(radius * proportional_std));
+proportional_std = 5;  % can be changed!
+[grad_x, grad_y] = gaussian_gradients(patch, radius / proportional_std);
 
 % Divide your gradients into 3 x 3 regions defined by place_regions.
 region_centres = place_regions([radius,radius], radius/3);
@@ -18,4 +18,4 @@ for pos = region_centres
 end
 
 % Normalize that vector to unit length.
-desc = desc / sum(desc);
+desc = desc / norm(desc);
