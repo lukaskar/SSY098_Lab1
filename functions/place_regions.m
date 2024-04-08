@@ -4,11 +4,11 @@ function region_centres = place_regions(centre, radius)
 cc_distance = floor(2 * radius);
 
 % positions in the 3x3 grid
-mid_row = centre(1);
+mid_row = centre(1) + 1;
 top = mid_row - cc_distance;
 bottom = mid_row + cc_distance;
 
-mid_col = centre(2);
+mid_col = centre(2) + 1;
 left = mid_col - cc_distance;
 right = mid_col + cc_distance;
 

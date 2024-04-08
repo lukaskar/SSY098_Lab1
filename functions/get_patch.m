@@ -7,6 +7,12 @@ upper = y - patch_radius;
 lower = y + patch_radius;
 
 if any(left < 1 | right > sz(2) | upper < 1 | lower > sz(1))
+    disp(['Rows:' num2str(sz(1))])
+    disp(['Columns:' num2str(sz(2))])
+    disp(['Left:' num2str(left)])
+    disp(['Right:' num2str(right)])
+    disp(['Upper:' num2str(upper)])
+    disp(['Lower:' num2str(lower)])
     error('Patch outside image border')
 end
 
